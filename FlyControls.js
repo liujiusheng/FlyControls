@@ -3,12 +3,12 @@
  * @author James Baicoianu / http://www.baicoianu.com/
  */
 
-THREE.FlyControls = function ( object, domElement ) {
+THREE.FlyControls = function ( options, object, domElement ) {
 
-	this.object = object;
+	this.object = options.target;
 	//this.camera = options.camera;
 
-	this.domElement = ( domElement !== undefined ) ? domElement : document;
+	this.domElement = options.domElement || document;
 	if ( domElement ) this.domElement.setAttribute( 'tabindex', - 1 );
 
 	// API
